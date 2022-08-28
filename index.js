@@ -2484,7 +2484,7 @@ if(db.data.settings[botNumber].userRegister && !db.data.users[m.sender].register
 if (!text) return reply(lang.NoTeksOne(prefix, command))
 reply(lang.wait())
 let res = await fetch(global.api('alfa', '/api/ephoto360/'+command, {text:text}, 'apikey'))
-if (!res.ok) return await res.text()
+if (!res.ok) return m.reply(lang.err())
 let img = await res.buffer()
 alpha.sendFile(m.chat, img, 'ephoto.jpg', lang.ok(), m)
 db.data.users[m.sender].limit -= 1
@@ -2501,7 +2501,7 @@ m1 = mm.split("|")[0];
 m2 = mm.split("|")[1]; 
 reply(lang.wait())
 let res = await fetch(global.api('alfa', '/api/ephoto360/'+command, {text:m1 , text2:m2}, 'apikey'))
-if (!res.ok) return await res.text()
+if (!res.ok) return m.reply(lang.err())
 let img = await res.buffer()
 alpha.sendFile(m.chat, img, 'ephoto.jpg', lang.ok(), m)
 db.data.users[m.sender].limit -= 1
@@ -2518,7 +2518,7 @@ m1 = mm.split("|")[0];
 m2 = mm.split("|")[1]; 
 reply(lang.wait())
 let res = await fetch(global.api(global.APIs.alfa, '/api/textpro/'+command, {text:m1 , text2: m2}, 'apikey'))
-if (!res.ok) return await res.text()
+if (!res.ok) return m.reply(lang.err())
 let img = await res.buffer()
 alpha.sendFile(m.chat, img, 'textpro.jpg', lang.ok(), m)
 db.data.users[m.sender].limit -= 1
@@ -2536,7 +2536,7 @@ m1 = mm.split("|")[0];
 m2 = mm.split("|")[1]; 
 reply(lang.wait())
 let res = await fetch(global.api(global.APIs.alfa, '/api/photooxy/'+command, {text:m1 , text2: m2}, 'apikey'))
-if (!res.ok) return await res.text()
+if (!res.ok) return m.reply(lang.err())
 let img = await res.buffer()
 alpha.sendFile(m.chat, img, 'photooxy.jpg', lang.ok(), m)
 db.data.users[m.sender].limit -= 1
@@ -2553,7 +2553,7 @@ if(db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Noli
 if (!text) return reply(lang.NoTeksOne(prefix, command))
 reply(lang.wait())
 let res = await fetch(global.api('alfa', '/api/photooxy/'+command, {text:text}, 'apikey'))
-if (!res.ok) return await res.text()
+if (!res.ok) return m.reply(lang.err())
 let img = await res.buffer()
 alpha.sendFile(m.chat, img, 'photooxy.jpg', lang.ok(), m)
 db.data.users[m.sender].limit -= 1
@@ -2566,7 +2566,7 @@ if(db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Noli
 if (!text) return reply(lang.NoTeksOne(prefix, command))
 reply(lang.wait())
 let res = await fetch(global.api('alfa', '/api/textpro/'+command, {text:text}, 'apikey'))
-if (!res.ok) return await res.text()
+if (!res.ok) return m.reply(lang.err())
 let img = await res.buffer()
 alpha.sendFile(m.chat, img, 'textpro.jpg', lang.ok(), m)
 db.data.users[m.sender].limit -= 1
@@ -2577,7 +2577,7 @@ case 'chika': case 'rikagusriani':  case 'bocil': case 'geayubi': case 'santuy':
 if(db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
 reply(lang.wait())
 let res = await fetch(global.api('alfa', '/api/asupan/'+command, {}, 'apikey'))
-if (!res.ok) return await res.text()
+if (!res.ok) return m.reply(lang.err())
 let img = await res.buffer()
 alpha.sendFile(m.chat, img, 'asupan.mp4', lang.ok(), m)
 db.data.users[m.sender].limit -= 1
@@ -2588,7 +2588,7 @@ case 'china': case 'indonesia': case 'malaysia': case 'thailand': case 'korea': 
 if(db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
 reply(lang.wait())
 let res = await fetch(global.api('alfa', '/api/cecan/'+command, {}, 'apikey'))
-if (!res.ok) return await res.text()
+if (!res.ok) return m.reply(lang.err())
 let img = await res.buffer()
 alpha.sendFile(m.chat, img, 'textpro.jpg', lang.ok(), m)
 db.data.users[m.sender].limit -= 1
@@ -2611,7 +2611,7 @@ if(db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Noli
 if (!db.data.chats[m.chat].nsfw) return reply(lang.OffNsfw())
 reply(lang.wait())
 let res = await fetch(global.api('alfa', '/api/sfw/'+command, {}, 'apikey'))
-if (!res.ok) return await res.text()
+if (!res.ok) return m.reply(lang.err())
 let img = await res.buffer()
 alpha.sendFile(m.chat, img, 'sfw.jpg', lang.ok(), m)
 db.data.users[m.sender].limit -= 1
@@ -2624,7 +2624,7 @@ if(db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Noli
 if (!db.data.chats[m.chat].nsfw) return reply(lang.OffNsfw())
 reply(lang.wait())
 let res = await fetch(global.api('alfa', '/api/nsfw/'+command, {}, 'apikey'))
-if (!res.ok) return await res.text()
+if (!res.ok) return m.reply(lang.err())
 let img = await res.buffer()
 alpha.sendFile(m.chat, img, 'nsfw.jpg', lang.ok(), m)
 db.data.users[m.sender].limit -= 1
@@ -2636,7 +2636,7 @@ if(db.data.settings[botNumber].userRegister && !db.data.users[m.sender].register
 if(db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
 reply(lang.wait())
 let res = await fetch(global.api('alfa', '/api/sound/'+command, {}, 'apikey'))
-if (!res.ok) return await res.text()
+if (!res.ok) return m.reply(lang.err())
 let img = await res.buffer()
 alpha.sendFile(m.chat, img, 'sound.mp3', lang.ok(), m)
 db.data.users[m.sender].limit -= 1
@@ -2665,7 +2665,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: atas, heroes : bawah}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -2692,7 +2692,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -2720,7 +2720,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, color : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -2747,7 +2747,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -2775,7 +2775,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, heroes : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -2803,7 +2803,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -2831,7 +2831,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -2859,7 +2859,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, heroes : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -2886,7 +2886,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -2914,7 +2914,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -2942,7 +2942,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, background : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -2970,7 +2970,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -2998,7 +2998,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3026,7 +3026,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, champion : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3054,7 +3054,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3082,7 +3082,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3110,7 +3110,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3138,7 +3138,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3166,7 +3166,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3194,7 +3194,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3222,7 +3222,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, logo : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3250,7 +3250,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 	let textpro2 = (api('alfa', '/api/ephoto360/anonymous'+command, {text: m1, style : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3278,7 +3278,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3306,7 +3306,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3334,7 +3334,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3362,7 +3362,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3390,7 +3390,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, hero : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3418,7 +3418,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, avatar : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3446,7 +3446,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3474,7 +3474,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3502,7 +3502,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, wallpaper : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3530,7 +3530,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, heroes : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3558,7 +3558,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3586,7 +3586,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, avatar : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3614,7 +3614,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3642,7 +3642,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, avatar : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3670,7 +3670,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, background : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3698,7 +3698,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, hero : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3725,7 +3725,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, letters : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3753,7 +3753,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, hero : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3781,7 +3781,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, avatar : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3809,7 +3809,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3837,7 +3837,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, avatar : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3865,7 +3865,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3893,7 +3893,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3919,7 +3919,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, style : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3947,7 +3947,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, character : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -3975,7 +3975,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, banner : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4003,7 +4003,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1, template : m2}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4032,7 +4032,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 	let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, banner : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4062,7 +4062,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, banner : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4092,7 +4092,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4122,7 +4122,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4152,7 +4152,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4182,7 +4182,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4212,7 +4212,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, icon : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4242,7 +4242,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4272,7 +4272,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4302,7 +4302,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, thumb : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4332,7 +4332,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4362,7 +4362,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4392,7 +4392,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, background : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4422,7 +4422,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, thumb : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4452,7 +4452,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, thumb : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4482,7 +4482,7 @@ reply(listt)
 } else {
 	reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/ephoto360/'+command, {text: m1,text2: m2, thumb : m3}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendFile(m.chat, img, 'ephoto360.jpg', lang.ok(), m)
 }
@@ -4685,7 +4685,7 @@ case 'awoawo':case 'benedict':case 'chat':case 'dbfly':case 'dino_kuning':case '
 if(db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
 reply(lang.wait())
 let textpro2 = await fetch(api('alfa', '/api/telegram-sticker/'+command, {}, 'apikey'))
-if (!textpro2.ok) return await textpro2.text()
+if (!textpro2.ok) return m.reply(lang.err())
 let img = await textpro2.buffer()
 alpha.sendImageAsSticker(m.chat, img, m, { packname: global.packname, author: global.author })
 db.data.users[m.sender].limit -= 1
